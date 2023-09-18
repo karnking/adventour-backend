@@ -14,7 +14,9 @@ const HotelSchema = mongoose.Schema({
     price:Number,
     off:String,
     city:String,
-    feedback:Array
+    feedback:Array,
+    assured:Boolean,
+    feature:String
 })
 
 const HotelModel = mongoose.model("hotel",HotelSchema)
