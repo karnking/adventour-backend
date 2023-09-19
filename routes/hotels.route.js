@@ -5,10 +5,11 @@ const hotelRouter = Router()
 
 hotelRouter.get('/',async(req,res)=>{
     try{
-        const {price,stars,feature,assured,sort} = req.query
+        const {price,stars,feature,assured,sort,city} = req.query
         let q = {}
         let hotels = []
         if(price) q.price = {$lte:price}
+        if(city) q.city = city
         if(stars) q.stars = {$gte:stars}
         if(feature) q.feature = feature
         if(assured) q.assured = assured=="true"
